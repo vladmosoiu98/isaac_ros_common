@@ -192,12 +192,17 @@ fi
 
 # Run container from image
 print_info "Running $CONTAINER_NAME"
-docker run -it --rm \
+docker run -it \
     --privileged \
-    --network host \
+    --net=host \
+    --ipc=host \
+    --pid=host \
     ${DOCKER_ARGS[@]} \
     -v $ISAAC_ROS_DEV_DIR:/workspaces/isaac_ros-dev \
     -v /dev/*:/dev/* \
+    -v /dev/bus/usb:/dev/bus/usb/ \
+    -v /dev:/dev \
+    -v /media/$USER:/media/nvidia:slave \
     -v /etc/localtime:/etc/localtime:ro \
     --name "$CONTAINER_NAME" \
     --runtime nvidia \
