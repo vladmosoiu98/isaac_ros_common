@@ -12,10 +12,16 @@
 echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 source /opt/ros/${ROS_DISTRO}/setup.bash
 
+echo "export ROS_DOMAIN_ID=3" >> ~/.bashrc
+export ROS_DOMAIN_ID=3
+
 sudo apt-get update
 rosdep update
 
 # Restart udev daemon
 sudo service udev restart
 
+rosdep install --from-paths src -y --ignore-src
+
+source install/setup.bash
 $@
