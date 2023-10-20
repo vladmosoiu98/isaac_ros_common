@@ -123,6 +123,7 @@ RUN apt-get update && apt-get install -y ros-humble-ros-base \
     ros-humble-rviz2 \
     ros-humble-rviz-common \
     ros-humble-rviz-default-plugins \
+    ros-humble-tf-transformations \
     ros-humble-sensor-msgs \
     ros-humble-slam-toolbox \
     ros-humble-v4l2-camera \
