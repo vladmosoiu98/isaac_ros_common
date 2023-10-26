@@ -18,6 +18,9 @@ RUN pip3 install transforms3d \
 	cupoch==0.2.7.4 \
 	pyrealsense2
 
+RUN export ROS_DOMAIN_ID=3 \
+    && echo "export ROS_DOMAIN_ID=3" >> ~/.bashrc
+
 # Restore using the default Humble DDS middleware: CycloneDDS
 #ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
