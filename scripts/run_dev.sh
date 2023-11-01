@@ -192,7 +192,7 @@ fi
 
 # Run container from image
 print_info "Running $CONTAINER_NAME"
-docker run -it \
+docker run -it --rm\
     --privileged \
     --net=host \
     --ipc=host \
