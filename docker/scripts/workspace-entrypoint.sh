@@ -25,4 +25,7 @@ rosdep install --from-paths src -y --ignore-src
 
 source install/setup.bash
 
+# ADD START COMMAND FOR DEPTH2LASER AND APRILTAG DETECT
+ros2 launch orin_bringup complete_launch.py
+
 $@
